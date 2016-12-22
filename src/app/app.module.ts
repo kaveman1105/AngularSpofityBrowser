@@ -8,6 +8,7 @@ import { SearchModule } from './search/search.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,7 +1,31 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1>search!</h1>
-    <p>...</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-  </div>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="inner-addon right-addon">
+                <i class="glyphicon glyphicon-search"></i>
+                <input 
+                class="form-control" 
+                type="text" 
+                placeholder="Search...." 
+                autofocus 
+                (keyup)="Search()" 
+                [(ngModel)]="searchstr"
+                name="searchStr"/>
+            </div>
+        </div>
+    </form>
+    <div class="row" *ngIf="artists.length > 0">
+        <div class="well well-lg" *ngFor="let artist of artists">
+            <h3>{{artist.name}}</h3>
+            <p>Genres: <span *ngFor="let genre of artist.genres">{{genre | uppercase}} </span></p>
+        </div>
+        <div class="well well-lg">
+            <h3>Artist name</h3>
+            <p>some artist info</p>
+        </div>
+        <div class="well well-lg">
+            <h3>Artist name</h3>
+            <p>some artist info</p>
+        </div>
+    </div>
 </div>
