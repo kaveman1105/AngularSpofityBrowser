@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SearchModule } from './search/search.module';
-
+import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found.component';
 
 @NgModule({
@@ -17,7 +17,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    SearchModule
+    SearchModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
