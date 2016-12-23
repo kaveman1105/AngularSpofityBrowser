@@ -1,31 +1,69 @@
+<div class="jumbotron well">
+    <div class="container">
+        <h2>Looking For Music?</h2>
+        <p>Search for Artists, Albums or Songs on Spotify</p>
+    </div>
+</div>
 <div class="container">
     <form>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-search"></i>
-                <input 
-                class="form-control" 
-                type="text" 
-                placeholder="Search...." 
-                autofocus 
-                (keyup)="Search()" 
-                [(ngModel)]="searchstr"
-                name="searchStr"/>
+                <input class="form-control" type="text" placeholder="Search...." autofocus (keyup)="Search()" [(ngModel)]="searchstr" name="searchStr"
+                />
             </div>
         </div>
     </form>
-    <div class="row" *ngIf="artists.length > 0">
-        <div class="well well-lg" *ngFor="let artist of artists">
-            <h3>{{artist.name}}</h3>
-            <p>Genres: <span *ngFor="let genre of artist.genres">{{genre | uppercase}} </span></p>
+
+    <div *ngIf="artists.length > 0">
+        <div class="row">
+            <h3>Artists</h3>
         </div>
-        <div class="well well-lg">
-            <h3>Artist name</h3>
-            <p>some artist info</p>
+        <div *ngFor="let artist of artists">
+            <div class="well well-lg" *ngIf="artist.images.length > 0">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-responsive" [src]="artist.images[0].url" />
+                    </div>
+                    <div class="col-md-8">
+                        <h4>{{artist.name}}</h4>
+                        <p *ngIf="artist.genres.length > 0">Genres: <span *ngFor="let genre of artist.genres">{{genre | uppercase}} </span></p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="well well-lg">
-            <h3>Artist name</h3>
-            <p>some artist info</p>
+    </div>
+    <div *ngIf="albums.length > 0">
+        <div class="row">
+            <h3>Albums</h3>
+        </div>
+        <div *ngFor="let album of albums">
+            <div class="well well-lg" *ngIf="album.images.length > 0">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-responsive" [src]="album.images[0].url" />
+                    </div>
+                    <div class="col-md-8">
+                        <h4>{{album.name}}</h4>
+                        <p *ngIf="album.artists.length > 0">Artists: <span *ngFor="let artist of album.artists">{{artist.name}} </span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div *ngIf="albums.length > 0">
+        <div class="row">
+            <h3>Songs</h3>
+        </div>
+        <div *ngFor="let track of tracks">
+            <div class="well well-lg">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>{{track.name}}</h4>
+                        <p *ngIf="track.artists.length > 0">Artists: <span *ngFor="let artist of track.artists">{{artist.name}} </span></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

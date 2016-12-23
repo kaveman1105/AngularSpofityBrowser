@@ -2,11 +2,3 @@ h1{
     color: ghostwhite;
 }
 
-.jumbotron{
-    max-width: 700px;
-    margin: auto;
-    background: #84a1ff;
-    border-color: #84a1ff;
-    box-shadow: 5px 5px 10px #14192b;
-    margin-bottom: 25px;
-}
