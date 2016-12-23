@@ -20,17 +20,7 @@
             <h3>Artists</h3>
         </div>
         <div *ngFor="let artist of artists">
-            <div class="well well-lg" *ngIf="artist.images.length > 0">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="img-responsive" [src]="artist.images[0].url" />
-                    </div>
-                    <div class="col-md-8">
-                        <h4>{{artist.name}}</h4>
-                        <p *ngIf="artist.genres.length > 0">Genres: <span *ngFor="let genre of artist.genres">{{genre | uppercase}} </span></p>
-                    </div>
-                </div>
-            </div>
+            <app-artist [artist]="artist"></app-artist>
         </div>
     </div>
     <div *ngIf="albums.length > 0">
@@ -38,32 +28,15 @@
             <h3>Albums</h3>
         </div>
         <div *ngFor="let album of albums">
-            <div class="well well-lg" *ngIf="album.images.length > 0">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="img-responsive" [src]="album.images[0].url" />
-                    </div>
-                    <div class="col-md-8">
-                        <h4>{{album.name}}</h4>
-                        <p *ngIf="album.artists.length > 0">Artists: <span *ngFor="let artist of album.artists">{{artist.name}} </span></p>
-                    </div>
-                </div>
-            </div>
+            <app-album [album]="album"></app-album>
         </div>
     </div>
-     <div *ngIf="albums.length > 0">
+    <div *ngIf="albums.length > 0">
         <div class="row">
             <h3>Songs</h3>
         </div>
         <div *ngFor="let track of tracks">
-            <div class="well well-lg">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>{{track.name}}</h4>
-                        <p *ngIf="track.artists.length > 0">Artists: <span *ngFor="let artist of track.artists">{{artist.name}} </span></p>
-                    </div>
-                </div>
-            </div>
+            <app-track [track]="track"></app-track>
         </div>
     </div>
 </div>

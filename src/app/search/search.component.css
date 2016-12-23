@@ -27,11 +27,7 @@ input{
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
 
-/*images*/
-.img-responsive{
-    width: 200px;
-    height: 200px;
-}
+
 .jumbotron{
     max-width: 700px;
     margin: auto;

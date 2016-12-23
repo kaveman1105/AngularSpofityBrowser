@@ -40,7 +40,7 @@ export class SearchComponent implements OnInit {
       this.searchService.searchTracks(this.searchstr)
         .subscribe(res => {
           this.tracks = res.tracks.items;
-          console.log(res);
+          //console.log(res);
         });
     }
   }

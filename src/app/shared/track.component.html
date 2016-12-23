@@ -1,0 +1,8 @@
+<div class="well well-lg">
+  <div class="row">
+    <div class="col-md-12">
+      <h4>{{track.name}}</h4>
+      <p *ngIf="track.artists.length > 0">Artists: <span *ngFor="let artist of track.artists">{{artist.name}} </span></p>
+    </div>
+  </div>
+</div>

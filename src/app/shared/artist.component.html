@@ -1,0 +1,11 @@
+<div class="well well-lg" *ngIf="artist.images.length > 0">
+  <div class="row">
+    <div class="col-md-4">
+      <img class="img-responsive" [src]="artist.images[0].url" />
+    </div>
+    <div class="col-md-8">
+      <h4>{{artist.name}}</h4>
+      <p *ngIf="artist.genres.length > 0">Genres: <span *ngFor="let genre of artist.genres">{{genre | uppercase}} </span></p>
+    </div>
+  </div>
+</div>

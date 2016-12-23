@@ -1,0 +1,11 @@
+<div class="well well-lg" *ngIf="album.images.length > 0">
+  <div class="row">
+    <div class="col-md-4">
+      <img class="img-responsive" [src]="album.images[0].url" />
+    </div>
+    <div class="col-md-8">
+      <h4>{{album.name}}</h4>
+      <p *ngIf="album.artists.length > 0">Artists: <span *ngFor="let artist of album.artists">{{artist.name}} </span></p>
+    </div>
+  </div>
+</div>

@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { SharedComponent } from './shared.component';
+import { TrackComponent } from './track.component';
 
-describe('SharedComponent', () => {
-  let component: SharedComponent;
-  let fixture: ComponentFixture<SharedComponent>;
+describe('TrackComponent', () => {
+  let component: TrackComponent;
+  let fixture: ComponentFixture<TrackComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SharedComponent ]
+      declarations: [ TrackComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SharedComponent);
+    fixture = TestBed.createComponent(TrackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
